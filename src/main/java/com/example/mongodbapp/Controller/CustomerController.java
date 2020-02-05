@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/customers")
@@ -17,18 +18,20 @@ public class CustomerController {
     private CustomerRepository customerRepository;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ArrayList<Customer> test() {
+    public List<Customer> test() {
+        System.out.println(customerRepository.findAll());
+        return customerRepository.findAll();
 
-        customerRepository.deleteAll();
+//        customerRepository.deleteAll();
 
         // save a couple of customers
-        customerRepository.save(new Customer("Alice", "Smith"));
-        customerRepository.save(new Customer("Bob", "Smith"));
-        customerRepository.save(new Customer("Nate", "Smith"));
-        customerRepository.save(new Customer("Alex", "Smith"));
-        customerRepository.save(new Customer("Dave", "Kent"));
-        customerRepository.save(new Customer("Sue", "Dave"));
-        customerRepository.save(new Customer("John", "Doe"));
+//        customerRepository.save(new Customer("Alice", "Smith"));
+//        customerRepository.save(new Customer("Bob", "Smith"));
+//        customerRepository.save(new Customer("Nate", "Smith"));
+//        customerRepository.save(new Customer("Alex", "Smith"));
+//        customerRepository.save(new Customer("Dave", "Kent"));
+//        customerRepository.save(new Customer("Sue", "Dave"));
+//        customerRepository.save(new Customer("John", "Doe"));
 
 //        // fetch all customers
 //        System.out.println("Customers found with findAll():");
@@ -50,18 +53,18 @@ public class CustomerController {
 //        }
 
 
-        System.out.println("Customer found with findByLastName('Smith'):");
-        System.out.println("--------------------------------");
-        if (customerRepository.findByLastName("Smith") != null) {
-            ArrayList<Customer> customerArrayList=new ArrayList<>();
-            for (Customer customer : customerRepository.findByLastName("Smith")) {
-                System.out.println(customer);
-                customerArrayList.add(customer);
-            }
-            return customerArrayList;
-        } else {
-            return null;
-        }
+//        System.out.println("Customer found with findByLastName('Smith'):");
+//        System.out.println("--------------------------------");
+//        if (customerRepository.findByLastName("Smith") != null) {
+//            ArrayList<Customer> customerArrayList = new ArrayList<>();
+//            for (Customer customer : customerRepository.findByLastName("Smith")) {
+//                System.out.println(customer);
+//                customerArrayList.add(customer);
+//            }
+//            return customerArrayList;
+//        } else {
+//            return null;
+//        }
 
 //        System.out.println("Customers found with findByLastName('Smith'):");
 //        System.out.println("--------------------------------");

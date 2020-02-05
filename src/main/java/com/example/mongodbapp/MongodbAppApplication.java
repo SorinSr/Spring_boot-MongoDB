@@ -1,17 +1,17 @@
 package com.example.mongodbapp;
 
-import com.example.mongodbapp.Model.Customer;
-import com.example.mongodbapp.Repository.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoDatabase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MongodbAppApplication{
+public class MongodbAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MongodbAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MongodbAppApplication.class, args);
+
+    }
 
 }
